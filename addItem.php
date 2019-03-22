@@ -10,4 +10,7 @@
         echo "Not logged in";
         echo "<a href='signup.php'>Log in</a>";
     }
+    
+    
+    
 ?>
