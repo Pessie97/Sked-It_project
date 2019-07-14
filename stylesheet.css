@@ -8,8 +8,9 @@ and open the template in the editor.
     Author     : pessi
 */
 html{
-    background-image: url("stripes.jpg");
+    background-image: url("light_blue_vertical_stripes.jpg");
     background-attachment: fixed;
+
 }
 
 .header img {
