@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
+<?php include 'header.php'; ?>
         
-        ?>
-    </body>
-</html>
+<form action="setup.php" method="get">
+    First Name:  <input type='text' name='fname' value=''><br> 
+    Last Name: <input type='text' name='lname' value=''><br>
+    Phone Number: <input type='number' name='phone' value=''><br>
+    Email Address: <input type='email' name ='email' value=''><br>
+    Password: <input type='password' name ='password' value=''><br>
+    Confirm Password: <input type='password' name='cpassword' value=''><br><br>
+    
+    
+        <input type='submit' name='submit' value='Go'>
+    
+</form>
+       
+        
+    <?php include 'footer.php'; ?>

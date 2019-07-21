@@ -15,7 +15,10 @@
          $sql = "select authorizeduserid from `authorizedusers` where username=$_email and Password=$_password";
          if (!$result = $mysqli->query($sql)){
              //echo "query error - data not in DB";
-               echo "<a href = 'join.php'>Sign Up</a>";
+              // echo "<a href = 'join.php'>Sign Up</a>";
+               echo "<script>\n
+    window.location.href = 'join.php';\n
+</script>";
             $_SESSION['LoggedIN']=FALSE;
          }
          else{
@@ -23,6 +26,10 @@
               $_SESSION['LoggedIN']=TRUE;
                 setcookie('username','email', time()+4800);
                 echo "<a href = 'addItem.php'>Add Item</a>";
+                //echo "<h1>Hello " +$_email;
+                echo "<script>\n
+    window.location.href = 'addItem.php';\n
+</script>";
          }
          
       
