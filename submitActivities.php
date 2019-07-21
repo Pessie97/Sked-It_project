@@ -1,3 +1,5 @@
+<!--Submits the users activity into the database -->
+
 <?php
 
  $mysqli = new mysqli('127.0.0.1:3308', 'root', '','finalproject');
@@ -14,9 +16,10 @@ $activityEndTime = $_POST['endduration'];
 $activityId = "select activityTypeid from activitytype where description like $activityType";
 $userId=$_GET['email'];
 $maxID = "select max(userscheduleid) from userschedule";
+$maxID +=1;
 
 $insertStatement = "insert into userschedule (userscheduleid,userid, activityid, starttime, endtime, activityname, activitydate "
-. "values($maxid+1, $userId, $activityId, $activityStartTime, $activityEndTime, $activityName, $activityDate)";
+. "values($maxid, $userId, $activityId, $activityStartTime, $activityEndTime, $activityName, $activityDate)";
 
 if ($mysqli->query($insertStatement) === TRUE) {
     echo "New record created successfully";

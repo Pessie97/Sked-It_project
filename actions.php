@@ -1,4 +1,4 @@
-
+<!--Populates drop down in the activities page from the database -->
         <?php
         
         $mysqli = new mysqli('127.0.0.1:3308', 'root', '','finalproject');

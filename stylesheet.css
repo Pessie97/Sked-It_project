@@ -15,8 +15,8 @@ html{
 
 .header img {
     float: left;
-  width: 100px;
-  height: 100px;
+    width: 100px;
+    height: 100px;
 }
 .header {
     background-color: #979A9A;
@@ -32,7 +32,7 @@ ul{
 
 li{
     float: left;
-   
+
 }
 
 li a{
@@ -55,7 +55,7 @@ li a:active{
 
 p{
     font-size: 1em;
-    
+
 }
 h3{
     text-align: center;
@@ -69,6 +69,13 @@ h4{
 /* the form design*/
 form{
     text-align: center;
-    
+    width: 300px;
+    margin: 0 auto;
+
+    border-color: black;
+    border-style: double;
+    border-width:40px;
+    font: 'Aclonica';
+    font-size: 2em;
 }
 
