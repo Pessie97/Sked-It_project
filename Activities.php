@@ -7,6 +7,7 @@
     Activity Date: <input type="date" name="date" value=""><br>
     Start Time of Activity: <input type="time" name="duration" value="01:00:00"><br>
     End Time of Activity: <input type="time" name="endduration" value="02:00:00"><br>
+    AM/PM <?php include 'time.php';?>
                 
     <input type="checkbox" name="reminder" > Set Reminder?<br>
       

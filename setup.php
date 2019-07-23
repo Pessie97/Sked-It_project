@@ -26,24 +26,27 @@ if ($_password == $_cpassword) {
         //echo "Your in!";
         //$userid = "select max(userid) from userinfo)";
         //++$userid ;
-        
+
         $more = "insert into userinfo (  UserFName, UserLName, UserName, UserEmail, UserPassword, UserPhoneNumber) "
                 . "values( '$_fname', '$_lname','$_email', '$_email', '$_password', '$_phone')";
-        $sql = "insert into authorizedusers (username, password) values('$_email', '$_password')";
-        if ($mysqli->query($sql) === TRUE) {
+        if ($mysqli->query($more) === TRUE) {
             echo "New record created successfully";
-            $_SESSION['LoggedIN'] = TRUE;
-        setcookie('username', 'email', time() + 4800);
-        //echo "<a href = 'addItem.php'>Add Item</a>";
-        //echo "<h1>Hello " + $_email;
-        echo "<script>\n
+            //$userId = mysqli_query($mysqli,"select userid from userinfo where userEmail = '$_email'");
+            $sql = "insert into authorizedusers (userid,username, password) select userID, UserEmail, UserPassword from userinfo "
+                    . "where userEmail = '$_email'";
+            if ($mysqli->query($sql) === TRUE) {
+                echo "New record created successfully";
+                $_SESSION['LoggedIN'] = TRUE;
+                setcookie('username', 'email', time() + 4800);
+                //echo "<a href = 'addItem.php'>Add Item</a>";
+                //echo "<h1>Hello " + $_email;
+                echo "<script>\n
     window.location.href = 'addItem.php';\n
 </script>";
-        } else {
-            echo "Error: " . $sql . "<br>" . $mysqli->error;
+            } else {
+                echo "Error: " . $sql . "<br>" . $mysqli->error;
+            }
         }
-
-        
     }
 } else {
     echo "<script>\n

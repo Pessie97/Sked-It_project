@@ -13,13 +13,14 @@ $activityType = $_POST['activityType'];
 $actvityDate = $_POST['date'];
 $activityStartTime = $_POST['duration'];
 $activityEndTime = $_POST['endduration'];
+$am_pm = $_POST['ampm'];
 $activityId = "select activityTypeid from activitytype where description like $activityType";
 $userId=$_GET['email'];
 $maxID = "select max(userscheduleid) from userschedule";
 $maxID +=1;
 
-$insertStatement = "insert into userschedule (userscheduleid,userid, activityid, starttime, endtime, activityname, activitydate "
-. "values($maxid, $userId, $activityId, $activityStartTime, $activityEndTime, $activityName, $activityDate)";
+$insertStatement = "insert into userschedule (userscheduleid,userid, activityid, starttime, endtime, activityname, activitydate, ampm "
+. "values($maxid, $userId, $activityId, '$activityStartTime', '$activityEndTime', '$activityName', '$activityDate', '$am_pm')";
 
 if ($mysqli->query($insertStatement) === TRUE) {
     echo "New record created successfully";
