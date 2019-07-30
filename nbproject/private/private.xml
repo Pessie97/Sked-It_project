@@ -5,12 +5,14 @@
         <group>
             <file>file:/C:/xampp/htdocs/FinalProject/Activities.php</file>
             <file>file:/C:/xampp/htdocs/FinalProject/join.php</file>
-            <file>file:/C:/xampp/htdocs/FinalProject/stylesheet.css</file>
-            <file>file:/C:/xampp/htdocs/FinalProject/signup.php</file>
+            <file>file:/C:/xampp/htdocs/FinalProject/actions.php</file>
             <file>file:/C:/xampp/htdocs/FinalProject/response.php</file>
             <file>file:/C:/xampp/htdocs/FinalProject/addItem.php</file>
-            <file>file:/C:/xampp/htdocs/FinalProject/submitActivities.php</file>
+            <file>file:/C:/xampp/htdocs/FinalProject/signup.php</file>
             <file>file:/C:/xampp/htdocs/FinalProject/setup.php</file>
+            <file>file:/C:/xampp/htdocs/FinalProject/time.php</file>
+            <file>file:/C:/xampp/htdocs/FinalProject/submitActivities.php</file>
+            <file>file:/C:/xampp/htdocs/FinalProject/database_info.php</file>
             <file>file:/C:/xampp/htdocs/FinalProject/index.php</file>
         </group>
     </open-files>
