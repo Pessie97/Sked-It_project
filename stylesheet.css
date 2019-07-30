@@ -1,12 +1,4 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Feb 24, 2019, 4:35:35 PM
-    Author     : pessi
-*/
+
 html{
     background-image: url("light_blue_vertical_stripes.jpg");
     background-attachment: fixed;
@@ -69,7 +61,7 @@ h4{
 /* the form design*/
 form{
     text-align: center;
-    width: 300px;
+    width: auto;
     margin: 0 auto;
 
     border-color: black;

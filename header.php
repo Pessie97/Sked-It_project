@@ -7,6 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <link href="stylesheet.css" rel="stylesheet" type="text/css">
+        <script src="menu.js"></script>
     </head>
     
     <body>
