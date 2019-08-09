@@ -44,7 +44,16 @@ li a:active{
 }
 
 /*End navbar design*/
-
+#slides img{
+	display:none;
+	float:right;
+        
+}
+#slides .slide img{
+    height:30px;
+    width:30px;
+    margin: auto;
+}
 p{
     font-size: 1em;
 
@@ -70,4 +79,3 @@ form{
     font: 'Aclonica';
     font-size: 2em;
 }
-
