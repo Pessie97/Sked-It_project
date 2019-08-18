@@ -1,7 +1,7 @@
 <!--Submits the users activity into the database -->
 
 <?php
-
+session_start();
  $mysqli = new mysqli('127.0.0.1:3308', 'root', '','finalproject');
          if ($mysqli->connect_errno){
              echo "Server connection Error";
@@ -9,18 +9,31 @@
          }
 
 $activityName = $_POST['activity'];
-$activityType = $_POST['activityType'];
+
 $actvityDate = $_POST['date'];
+
 $activityStartTime = $_POST['duration'];
 $activityEndTime = $_POST['endduration'];
 $am_pm = $_POST['ampm'];
-$activityId = "select activityTypeid from activitytype where description like $activityType";
-$userId=$_GET['email'];
-$maxID = "select max(userscheduleid) from userschedule";
-$maxID +=1;
+$activityId = $_POST['activityType'];
+$userName=$_SESSION['Name'];
 
-$insertStatement = "insert into userschedule (userscheduleid,userid, activityid, starttime, endtime, activityname, activitydate, ampm "
-. "values($maxid, $userId, $activityId, '$activityStartTime', '$activityEndTime', '$activityName', '$activityDate', '$am_pm')";
+$userId = $_SESSION['userid'];
+//echo $userId;
+/*
+$result = $mysqli->query($userId);
+if ($mysqli->query($userId) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $userId . "<br>" . $mysqli->error;
+}
+echo $userId;
+ * 
+ */
+//echo $result;
+
+$insertStatement = "insert into userschedule (userid, activityid, starttime, endtime, activityname, activitydate, ampm "
+. "values( $userId, $activityId, '$activityStartTime', '$activityEndTime', '$activityName', '$actvityDate', '$am_pm')";
 
 if ($mysqli->query($insertStatement) === TRUE) {
     echo "New record created successfully";

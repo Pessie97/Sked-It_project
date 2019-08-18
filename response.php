@@ -14,6 +14,7 @@ $sql = "select userid from authorizedusers where "
         . "username='$_email' and Password='$_password'";
 //$result = mysqli_query($mysqli, $sql);
 $result = $mysqli->query($sql);
+//echo $result;
 
 if (!$result||mysqli_num_rows($result) == 0) {
     $_SESSION['LoggedIN'] = FALSE;
@@ -27,6 +28,8 @@ if (!$result||mysqli_num_rows($result) == 0) {
     //echo "Your in!";
     //echo  "Error: " . $sql . "<br>" . $mysqli->error;
     $_SESSION['LoggedIN'] = TRUE;
+    $_SESSION['Name']=$_email;
+    
     setcookie('username', 'email', time() + 4800);
     // echo "<a href = 'addItem.php'>Add Item</a>";
     //echo "<h1>Hello " +$_email;

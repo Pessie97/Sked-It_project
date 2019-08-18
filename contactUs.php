@@ -1,4 +1,4 @@
-<!--Ability to leave a message for the creator. will try to connect to an email address somehow -->
+<!--Ability to leave a message for the creator. sends email as confirmation -->
 
 <?php include "header.php"; ?>
 

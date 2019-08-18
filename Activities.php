@@ -1,6 +1,7 @@
 <!--the activity form for user to add an activity to the database/schedule -->
         <?php include 'header.php';?>
 
+<h3>Welcome, <?php session_start(); echo $_SESSION['Name']; ?></h3>
 <form name="activities" method="post" action="submitActivities.php">
     Type of Activity: <?php include 'actions.php';?><br>
     Activity Name: <input type="text" name="activity" value=""><br>

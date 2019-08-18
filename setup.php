@@ -22,14 +22,12 @@ if ($_password == $_cpassword) {
         
             $more = "insert into userinfo (  UserFName, UserLName, UserName, UserEmail, UserPassword, UserPhoneNumber) "
                     . "values( '$_fname', '$_lname','$_email', '$_email', '$_password', '$_phone')";
-            echo 'after insert';
+            //echo 'after insert';
             if ($mysqli->query($more) == TRUE) {
 
-                echo "New record created successfully";
-            } else {
-                echo "Error: " . $sql . "<br>" . $mysqli->error;
-            }
-            //$userId = mysqli_query($mysqli,"select userid from userinfo where userEmail = '$_email'");
+                //echo "New record created successfully";
+                $userId = mysqli_query($mysqli,"select userid from userinfo where userEmail = '$_email'");
+                $_SESSION['userid']=$userId;
             $sql = "insert into authorizedusers (userid,username, password) select userID, UserEmail, UserPassword from userinfo "
                     . "where userEmail = '$_email'";
             if ($mysqli->query($sql) === TRUE) {
@@ -44,6 +42,10 @@ if ($_password == $_cpassword) {
             } else {
                 echo "Error: " . $sql . "<br>" . $mysqli->error;
             }
+            } else {
+                echo "Error: " . $more . "<br>" . $mysqli->error;
+            }
+            
         
     }
 } else {
