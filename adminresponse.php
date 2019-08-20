@@ -10,31 +10,31 @@ if ($mysqli->connect_errno) {
     echo "Server connection Error";
     exit;
 }
-$sql = "select userid from authorizedusers where "
-        . "username='$_email' and Password='$_password'";
+$sql = "select adminid from adminrights where "
+        . "useremail='$_email' and userpassword='$_password'";
 //$result = mysqli_query($mysqli, $sql);
 $result = $mysqli->query($sql);
 //echo $result;
 
 if (!$result||mysqli_num_rows($result) == 0) {
-    $_SESSION['LoggedIN'] = FALSE;
+    $_SESSION['Passed'] = FALSE;
     //echo  "Error: " . $sql . "<br>" . $mysqli->error;
         echo "<script>\n
-    window.location.href = 'join.php';\n
+    window.location.href = 'index.php';\n
 </script>";
         
    
 } else {
     //echo "Your in!";
     //echo  "Error: " . $sql . "<br>" . $mysqli->error;
-    $_SESSION['LoggedIN'] = TRUE;
-    $_SESSION['Name']=$_email;
+    $_SESSION['Passed'] = TRUE;
+    $_SESSION['uName']=$_email;
     
-    setcookie('username', $_email, time() + 4800);
+    setcookie('admin', $_email, time() + 4800);
     // echo "<a href = 'addItem.php'>Add Item</a>";
     //echo "<h1>Hello " +$_email;
    echo "<script>\n
-    window.location.href = 'addItem.php';\n
+    window.location.href = 'database_info.php';\n
 </script>";
 }
          

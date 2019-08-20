@@ -16,7 +16,7 @@ if ($_password == $_cpassword) {
         echo "Server connection Error";
         exit;
     } else {
-        echo "Your in!";
+        //echo "Your in!";
         //$userid = "select max(userid) from userinfo)";
         //++$userid ;
         
@@ -33,7 +33,7 @@ if ($_password == $_cpassword) {
             if ($mysqli->query($sql) === TRUE) {
                 echo "New record created successfully";
                 $_SESSION['LoggedIN'] = TRUE;
-                setcookie('username', 'email', time() + 4800);
+                setcookie('username', $_email, time() + 4800);
                 //echo "<a href = 'addItem.php'>Add Item</a>";
                 //echo "<h1>Hello " + $_email;
                 echo "<script>\n

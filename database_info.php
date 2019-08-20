@@ -21,7 +21,7 @@
         exit;
     } else {
         $result = $mysqli -> query('select * from userSchedule');
-        //echo " <select name = activityType>";
+      
         while ($row = mysql_fetch_array($result)) {
             echo "<td>".$row[UserID]."</td>";
             echo "<td>".$row[ScheduleID]."</td>";
@@ -30,20 +30,11 @@
             echo "<td>".$row[startTime]."</td>";
             echo "<td>".$row[endTime]."</td>";
             echo "<td>".$row[Date]."</td>";
-            echo "<td>".$row[AMPM]."</td>";
-            
+            echo "<td>".$row[AMPM]."</td>";       
         }
     }
-
-    //echo "</select>"
-    ?>
-         
-    </tr>
-       
-        
-        
-    
-    
+    ?>     
+    </tr>  
 </table>
 
 <?php include 'footer.php';?>
