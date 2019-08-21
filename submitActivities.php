@@ -18,7 +18,7 @@ $am_pm = $_POST['ampm'];
 $activityId = $_POST['activityType'];
 $userName=$_SESSION['Name'];
 
-$userId = $_SESSION['userid'];
+
 //echo $userId;
 /*
 $result = $mysqli->query($userId);
@@ -32,11 +32,14 @@ echo $userId;
  */
 //echo $result;
 
-$insertStatement = "insert into userschedule (userid, activityid, starttime, endtime, activityname, activitydate, ampm "
-. "values( $userId, $activityId, '$activityStartTime', '$activityEndTime', '$activityName', '$actvityDate', '$am_pm')";
+$insertStatement = "insert into userschedule (username, activityid, starttime, endtime, activityname, date, ampm) "
+. "values( '$userName', $activityId, '$activityStartTime', '$activityEndTime', '$activityName', '$actvityDate', '$am_pm')";
 
 if ($mysqli->query($insertStatement) === TRUE) {
-    echo "New record created successfully";
+    //echo "New record created successfully";
+    echo "<script>\n
+    window.location.href = 'displayActivity.php';\n
+</script>";
 } else {
     echo "Error: " . $insertStatement . "<br>" . $mysqli->error;
 }

@@ -5,4 +5,5 @@
     <li><a href="signup.php">Sign In</a>
     <li><a href = "admin.php">Admin</a>
     <li><a href="contactUs.php">Contact Us</a>
+    <li><a href="signout.php">Sign Out</a>
 </ul>
